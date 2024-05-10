@@ -1,0 +1,7 @@
+
+services:
+  app:
+    image: "php:8.3-apache"
+    restart: always
+    ports:
+      - "8081:80" # http: 80 -> http://localhost 8081
