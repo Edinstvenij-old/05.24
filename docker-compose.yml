@@ -1,3 +1,10 @@
+networks:
+  php_pro:
+    driver: bridge
+
+volumes:
+  database_volume:
+    driver: local
 
 networks:
   php_pro:
