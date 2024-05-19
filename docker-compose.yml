@@ -6,17 +6,10 @@ volumes:
   database_volume:
     driver: local
 
-networks:
-  php_pro:
-    driver: bridge
-
-volumes:
-  database_volume:
-    driver: local
-
 services:
   app:
-    image: "php:8.3-apache"
+    build:
+      context: .docker/php
     restart: always
     ports:
       - "8081:80"
