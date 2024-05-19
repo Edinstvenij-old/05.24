@@ -1,0 +1,13 @@
+{
+    "name": "root/html",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Overload\\": "App/Classes",
+            "App\\": "App/"
+        }
+    },
+    "require": {
+        "larapack/dd": "^1.1"
+    }
+}
