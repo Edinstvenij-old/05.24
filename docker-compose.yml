@@ -25,7 +25,7 @@ services:
     volumes:
       - "database_volume:/var/lib/mysql"
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: 1603
       MYSQL_DATABASE: php_pro_advanced
     networks:
       - php_pro
