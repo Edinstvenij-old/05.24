@@ -1,12 +1,15 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
-$dsn = 'mysql:host=database;database=php_pro_advanced';
+// $dsn = 'mysql:host=database;database=php_pro_advanced';
+require_once __DIR__ . '/Patterns/FabricMethod/index.php';
 
+/*
 try {
    $pdo = new PDO($dsn, 'root', '1603');
 } catch (PDOException $exception) {
    dd ($exception);
 }
+*/
 
 /*
 use Overload\User;
