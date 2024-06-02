@@ -1,19 +1,22 @@
 <?php
+
 namespace Core;
 
 use App\Enums\Http\Status;
 
 abstract class Controller
 {
-   public function before(string $action, array $params = []): bool
+   public function before (string $action, array $params = []): bool
    {
       return true;
    }
 
-   public function after(string $action): void {}
-
-   protected function response(Status $status, array $body = [], array $errors = []): array
+   public function after (string $action): void
    {
-      return compact('status', 'body', 'errors');
+   }
+
+   protected function response (Status $status, array $body = [], array $errors = []): array
+   {
+      return compact ('status', 'body', 'errors');
    }
 }

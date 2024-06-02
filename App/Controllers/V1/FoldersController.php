@@ -7,28 +7,28 @@ use App\Enums\Http\Status;
 
 class FoldersController extends BaseApiController
 {
-   public function index()
+   public function index ()
    {
-      return $this->response(Status::OK, ['method' => 'index']);
+      return $this -> response (Status::OK, ['method' => 'index']);
    }
 
-   public function show(int $id)
+   public function show (int $id)
    {
-      return $this->response(Status::OK, ['method' => 'show', 'id' => $id]);
+      return $this -> response (Status::OK, ['method' => 'show', 'id' => $id]);
    }
 
-   public function store()
+   public function store ()
    {
-      return $this->response(Status::OK, ['method' => 'store']);
+      return $this -> response (Status::OK, ['method' => 'store']);
    }
 
-   public function update(int $id)
+   public function update (int $id)
    {
-      return $this->response(Status::OK, ['method' => 'update', 'id' => $id]);
+      return $this -> response (Status::OK, ['method' => 'update', 'id' => $id]);
    }
 
-   public function delete(int $id)
+   public function delete (int $id)
    {
-      return $this->response(Status::OK, ['method' => 'delete', 'id' => $id]);
+      return $this -> response (Status::OK, ['method' => 'delete', 'id' => $id]);
    }
 }
