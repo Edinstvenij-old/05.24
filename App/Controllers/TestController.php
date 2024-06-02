@@ -4,12 +4,12 @@ require_once 'BaseController.php';
 
 class TestController extends BaseController {
    public function before() {
-      // Логіка перед основною дією
+
       error_log("Before action");
    }
 
    public function after($response) {
-      // Логіка після основної дії
+
       error_log("After action");
       return parent::after($response);
    }
