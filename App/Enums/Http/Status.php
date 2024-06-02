@@ -14,23 +14,23 @@ enum Status: int
    case UNPROCESSABLE_ENTITY = 422;
    case INTERNAL_SERVER_ERROR = 500;
 
-   public function withDescription(): array
+   public function withDescription()
    {
-      $description = match ($this) {
-         self::OK => '200 OK',
-         self::CREATED => '201 Created',
-         self::BAD_REQUEST => '400 Bad Request',
-         self::UNAUTHORIZED => '401 Unauthorized',
-         self::FORBIDDEN => '403 Forbidden',
-         self::NOT_FOUND => '404 Not Found',
-         self::METHOD_NOT_ALLOWED => '405 Method Not Allowed',
-         self::UNPROCESSABLE_ENTITY => '422 Unprocessable Entity',
-         self::INTERNAL_SERVER_ERROR => '500 Internal Server Error',
+      $description = match ($this->value) {
+         200 => 'OK',
+         201 => 'CREATED',
+         400 => 'Bad Request',
+         401 => 'Unauthorized',
+         404 => 'Not found',
+         403 => 'Forbidden',
+         405 => 'Method not allowed',
+         422 => 'Unprocessable entity',
+         500 => 'Internal Server error',
       };
 
       return [
          'code' => $this->value,
-         'status' => $description
+         'status' => $this->value . ' ' . $description
       ];
    }
 }

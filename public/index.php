@@ -1,9 +1,24 @@
 <?php
 
+use App\Enums\Http\Status;
+use Core\Router;
+
 define('BASE_DIR', dirname(__DIR__));
+
 require_once BASE_DIR . '/vendor/autoload.php';
 
-use App\Enums\Http\Status;
-
-echo jsonResponse(Status::METHOD_NOT_ALLOWED, ['message' => 'Method Not Allowed']);
-exit;
+try {
+   die(Router::dispatch($_SERVER['REQUEST_URI']));
+} catch (Throwable $exception) {
+   dd($exception);
+   die(
+   jsonResponse(
+      Status::from($exception->getCode()),
+      [
+         'errors' => [
+            'message' => $exception->getMessage()
+         ]
+      ]
+   )
+   );
+}
