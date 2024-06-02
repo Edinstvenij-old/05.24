@@ -1,9 +1,14 @@
 <?php
 
-define('BASE_DIR', dirname(__DIR__));
-require_once BASE_DIR . '/vendor/autoload.php';
+require_once '../Core/Router.php';
+require_once '../App/Controllers/TestController.php';
 
-use App\Enums\Http\Status;
+$router = new Router();
 
-echo jsonResponse(Status::METHOD_NOT_ALLOWED, ['message' => 'Method Not Allowed']);
-exit;
+$router->addRoute('GET', '/test', 'TestController', 'getAction');
+$router->addRoute('POST', '/test', 'TestController', 'postAction');
+
+$method = $_SERVER['REQUEST_METHOD'];
+$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+$router->dispatch($method, $uri);
