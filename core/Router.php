@@ -24,13 +24,16 @@ class Router
 
    static public function getInstance (): static
    {
-      if (is_null (static ::$instance)) {
-         static ::$instance = new static;
+      if (is_null (static::$instance)) {
+         static::$instance = new static;
       }
 
-      return static ::$instance;
+      return static::$instance;
    }
 
+   /**
+    * @throws \ReflectionException
+    */
    public function __call (string $name, array $arguments)
    {
       $methodName = 'set' . ucfirst ($name);
@@ -63,7 +66,7 @@ class Router
 
    static public function dispatch (string $uri): string
    {
-      $router = static ::getInstance ();
+      $router = static::getInstance ();
 
       $uri = $router -> removeQueryVariables ($uri);
       $uri = trim ($uri, '/');
