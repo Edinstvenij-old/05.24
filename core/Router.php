@@ -49,6 +49,7 @@ class Router
       }
 
       call_user_func_array ([$this, $methodName], $arguments);
+      return $this;
    }
 
    static protected function setUri (string $uri): static
