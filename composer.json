@@ -13,5 +13,8 @@
     },
     "require": {
         "larapack/dd": "^1.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.1"
     }
 }
