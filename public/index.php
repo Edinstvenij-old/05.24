@@ -8,17 +8,16 @@ define ('BASE_DIR', dirname (__DIR__));
 require_once BASE_DIR . '/vendor/autoload.php';
 
 try {
-   die(Router ::dispatch ($_SERVER['REQUEST_URI']));
+   $response = Router::dispatch ($_SERVER['REQUEST_URI']);
+   echo $response;
 } catch (Throwable $exception) {
-   dd ($exception);
-   die(
-   jsonResponse (
-      Status ::from ($exception -> getCode ()),
+   $response = jsonResponse (
+      Status::from ($exception->getCode()),
       [
          'errors' => [
-            'message' => $exception -> getMessage ()
+            'message' => $exception->getMessage ()
          ]
       ]
-   )
    );
+   echo $response;
 }
