@@ -1,14 +1,15 @@
 <?php
 
-require_once '../Core/Router.php';
-require_once '../App/Controllers/TestController.php';
+require_once dirname (__DIR__) . '/Core/Router.php';
+require_once dirname (__DIR__) . '/Core/RequestMethod.php';
+require_once dirname (__DIR__) . '/App/Controllers/BaseController.php';
+require_once dirname (__DIR__) . '/App/Controllers/NotesController.php';
 
 $router = new Router();
 
-$router->addRoute('GET', '/test', 'TestController', 'getAction');
-$router->addRoute('POST', '/test', 'TestController', 'postAction');
+$router -> addRoute (RequestMethod::GET, '/api/v1/notes/{id}', 'NotesController', 'getNote');
+$router -> addRoute (RequestMethod::POST, '/api/v1/notes', 'NotesController', 'createNote');
+$router -> addRoute (RequestMethod::PUT, '/api/v1/notes/{id}', 'NotesController', 'updateNote');
+$router -> addRoute (RequestMethod::DELETE, '/api/v1/notes/{id}', 'NotesController', 'deleteNote');
 
-$method = $_SERVER['REQUEST_METHOD'];
-$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-
-$router->dispatch($method, $uri);
+$router -> dispatch ();

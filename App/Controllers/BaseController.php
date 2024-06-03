@@ -1,12 +1,11 @@
 <?php
 
-abstract class BaseController {
+class BaseController {
    public function before() {
 
    }
 
-   public function after($response) {
+   public function after() {
 
-      return $response;
    }
 }

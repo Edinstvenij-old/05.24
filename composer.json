@@ -8,7 +8,7 @@
         },
         "files": [
             "core/helpers.php",
-            "routes/api.php"
+            "routes/web.php"
         ]
     },
     "require": {
