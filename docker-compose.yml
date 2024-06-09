@@ -26,7 +26,7 @@ services:
       - "database_volume:/var/lib/mysql"
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: scooter_rental
+      MYSQL_DATABASE: php_pro_advanced
     networks:
       - php_pro
   adminer:

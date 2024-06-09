@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS rentals (
     scooter_id INT,
     rental_start TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     rental_end TIMESTAMP,
-    cost DECIMAL(10, 2),
+    price_per_hour DECIMAL(10, 2),
     FOREIGN KEY (user_id) REFERENCES users (id),
     FOREIGN KEY (scooter_id) REFERENCES scooters (id)
     );
