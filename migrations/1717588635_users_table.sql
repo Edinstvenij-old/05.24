@@ -1,6 +1,8 @@
-CREATE TABLE IF NOT EXISTS users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(255) NOT NULL UNIQUE,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    );
+INSERT INTO folders
+(user_id, title)
+VALUES
+    (1, 'folder 1'),
+    (1, 'folder 2'),
+(1, 'folder 3'),
+(1, 'folder 4'),
+(1, 'folder 5');

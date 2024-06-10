@@ -32,10 +32,10 @@ try {
         Status::from($exception->getCode()),
         [
             'errors' => [
-                    'message' => $exception->getMessage(),
-                    'trace' => $exception->getTrace()
-                ]
+                'message' => $exception->getMessage(),
+                'trace' => $exception->getTrace()
             ]
-        )
+        ]
+    )
     );
 }

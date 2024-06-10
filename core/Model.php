@@ -16,9 +16,9 @@ abstract class Model
 
         $reflect = new \ReflectionClass($this);
         $props = $reflect->getProperties(\ReflectionProperty::IS_PUBLIC);
-        $vars = (array)$this;
+        $vars = (array) $this;
 
-        foreach ($props as $prop) {
+        foreach($props as $prop) {
             if (in_array($prop->getName(), ['commands', 'tableName'])) {
                 continue;
             }

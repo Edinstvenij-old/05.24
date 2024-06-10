@@ -104,10 +104,11 @@ trait Queryable
 
         if (!in_array('where', $obj->commands)) {
             static::$query .= " WHERE";
-            $obj->commands[] = 'where';
+
         }
 
         static::$query .= " $column $operator->value $value";
+        $obj->commands[] = 'where';
 
         return $obj;
     }
